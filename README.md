@@ -26,7 +26,15 @@ that brings 2 main things to the table:
 
 ```sh
 (cd nominatim-api && ./generate-swagger-schema.hs > schema.json)
-nix-shell -p nodejs-12_x --run 'npm i && npm start'
+nix-shell -p nodejs-12_x --run 'npm i && npm run build-from-schema && npm start'
+```
+
+### Run shell with work environment
+
+With `tsc`, `tslint`, etc.
+
+```sh
+nix-shell -p nodejs-12_x --run 'npm i && PATH="${PWD}/node_modules/.bin:${PATH}" bash'
 ```
 
 # Author

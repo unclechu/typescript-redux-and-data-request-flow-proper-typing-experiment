@@ -1,12 +1,12 @@
 {
-  "name": "typescript-redux",
+  "name": "-",
   "version": "0.0.0",
   "description": "TypeScript & Redux prototype of correct typing and runtime validation of a data requested from a server",
-  "main": "index.js",
+  "main": "-",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node -O '{\"strict\":true}' index.ts",
-    "build": "tsc --strict index.ts"
+    "start": "ts-node -O '{\"target\":\"es2015\"}' src/index.ts",
+    "build": "tsc --target es2015 --module commonjs -p .",
+    "build-from-schema": "ts-node -O '{\"target\":\"es2015\"}' nominatim-api/schema-to-typescript.ts"
   },
   "author": "Viacheslav Lotsmanov",
   "license": "UNLICENSED",
@@ -14,10 +14,14 @@
     "@types/node-fetch": "^2.5.5",
     "@types/query-string": "^6.3.0",
     "@types/redux": "^3.6.0",
+    "dtsgenerator": "^2.5.0",
     "node-fetch": "^2.6.0",
     "query-string": "^6.11.1",
     "redux": "^4.0.5",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.0"
   }
 }
